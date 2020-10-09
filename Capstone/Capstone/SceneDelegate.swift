@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Capstone
 //
-//  Created by Shaggy Bremnath on 2020-09-23.
+//  Created by Alan David Kumaran on 2020-10-09.
 //  Copyright © 2020 Shaggy Bremnath. All rights reserved.
 //
 
@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
+            window.rootViewController = UIHostingController(rootView: contentView.environmentObject(SessionStore()))
             self.window = window
             window.makeKeyAndVisible()
         }
