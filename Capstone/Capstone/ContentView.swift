@@ -9,11 +9,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         
-        
-        Text("Hello, World!")
+            ZStack{
+                VStack{
+                    TabView{
+                        
+                        NutrientBreakdownView().tag(0)
+                        
+                        DailyLogView().tag(1)
+                        
+    
+                    }
+                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+             
+      }
     }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
