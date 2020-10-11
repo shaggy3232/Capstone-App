@@ -20,20 +20,14 @@ struct ContentView: View {
             if (session.session != nil) {
                 Text("Welcome back")
             } else {
-                Text("Show Auth Screen")
+                AuthView()
             }
         }.onAppear(perform: getUser)
-        
-        
             ZStack{
                 VStack{
                     TabView{
-                        
                         NutrientBreakdownView().tag(0)
-                        
                         DailyLogView().tag(1)
-                        
-    
                     }
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
              

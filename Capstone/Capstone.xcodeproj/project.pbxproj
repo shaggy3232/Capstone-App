@@ -15,10 +15,11 @@
 		E7170DD8251B827100B385A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7170DD7251B827100B385A9 /* Preview Assets.xcassets */; };
 		E7170DDB251B827100B385A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7170DD9251B827100B385A9 /* LaunchScreen.storyboard */; };
 		E7232C0F2530E4D6003F3528 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7232C0E2530E4D6003F3528 /* GoogleService-Info.plist */; };
+		E72D2DAE2532948C00DA7090 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D2DAD2532948C00DA7090 /* AuthView.swift */; };
+		E72D2DBF25329AF200DA7090 /* Southampton.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E72D2DBE25329AF200DA7090 /* Southampton.ttf */; };
 		E78680A425309E1C004A8ABD /* DailyLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680A325309E1C004A8ABD /* DailyLogView.swift */; };
 		E78680A72530A9A8004A8ABD /* NutrientBreakdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680A62530A9A8004A8ABD /* NutrientBreakdownView.swift */; };
 		E78680AB2530B542004A8ABD /* MealCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680AA2530B542004A8ABD /* MealCardView.swift */; };
-		E7AD969C2530E6E80060CA75 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AD969B2530E6E80060CA75 /* AuthView.swift */; };
 		E7AD96A02530E7070060CA75 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AD969F2530E7070060CA75 /* SessionStore.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,10 +35,11 @@
 		E7170DDA251B827100B385A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7170DDC251B827100B385A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7232C0E2530E4D6003F3528 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E72D2DAD2532948C00DA7090 /* AuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		E72D2DBE25329AF200DA7090 /* Southampton.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Southampton.ttf; sourceTree = "<group>"; };
 		E78680A325309E1C004A8ABD /* DailyLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLogView.swift; sourceTree = "<group>"; };
 		E78680A62530A9A8004A8ABD /* NutrientBreakdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientBreakdownView.swift; sourceTree = "<group>"; };
 		E78680AA2530B542004A8ABD /* MealCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCardView.swift; sourceTree = "<group>"; };
-		E7AD969B2530E6E80060CA75 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		E7AD969F2530E7070060CA75 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		F682874444DE396D8986066D /* Pods_Capstone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Capstone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -95,7 +97,7 @@
 				E7170DCE251B826900B385A9 /* AppDelegate.swift */,
 				E7170DD0251B826900B385A9 /* SceneDelegate.swift */,
 				E7170DD2251B826900B385A9 /* ContentView.swift */,
-				E7AD969B2530E6E80060CA75 /* AuthView.swift */,
+				E72D2DAD2532948C00DA7090 /* AuthView.swift */,
 				E7AD969F2530E7070060CA75 /* SessionStore.swift */,
 				E7170DD4251B827100B385A9 /* Assets.xcassets */,
 				E78680A325309E1C004A8ABD /* DailyLogView.swift */,
@@ -104,6 +106,7 @@
 				E7170DD9251B827100B385A9 /* LaunchScreen.storyboard */,
 				E7170DDC251B827100B385A9 /* Info.plist */,
 				E7232C0E2530E4D6003F3528 /* GoogleService-Info.plist */,
+				E72D2DB02532954800DA7090 /* Fonts */,
 				E7170DD6251B827100B385A9 /* Preview Content */,
 			);
 			path = Capstone;
@@ -115,6 +118,14 @@
 				E7170DD7251B827100B385A9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E72D2DB02532954800DA7090 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E72D2DBE25329AF200DA7090 /* Southampton.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +190,7 @@
 			files = (
 				E7170DDB251B827100B385A9 /* LaunchScreen.storyboard in Resources */,
 				E7232C0F2530E4D6003F3528 /* GoogleService-Info.plist in Resources */,
+				E72D2DBF25329AF200DA7090 /* Southampton.ttf in Resources */,
 				E7170DD8251B827100B385A9 /* Preview Assets.xcassets in Resources */,
 				E7170DD5251B827100B385A9 /* Assets.xcassets in Resources */,
 			);
@@ -233,13 +245,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7AD969C2530E6E80060CA75 /* AuthView.swift in Sources */,
 				E78680A72530A9A8004A8ABD /* NutrientBreakdownView.swift in Sources */,
 				E78680AB2530B542004A8ABD /* MealCardView.swift in Sources */,
 				E7170DCF251B826900B385A9 /* AppDelegate.swift in Sources */,
 				E78680A425309E1C004A8ABD /* DailyLogView.swift in Sources */,
 				E7170DD1251B826900B385A9 /* SceneDelegate.swift in Sources */,
 				E7AD96A02530E7070060CA75 /* SessionStore.swift in Sources */,
+				E72D2DAE2532948C00DA7090 /* AuthView.swift in Sources */,
 				E7170DD3251B826900B385A9 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
