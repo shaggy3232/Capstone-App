@@ -3,25 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E62D3B51F2063132B9E5B801 /* Pods_Capstone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F682874444DE396D8986066D /* Pods_Capstone.framework */; };
 		E7170DCF251B826900B385A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7170DCE251B826900B385A9 /* AppDelegate.swift */; };
 		E7170DD1251B826900B385A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7170DD0251B826900B385A9 /* SceneDelegate.swift */; };
 		E7170DD3251B826900B385A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7170DD2251B826900B385A9 /* ContentView.swift */; };
 		E7170DD5251B827100B385A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7170DD4251B827100B385A9 /* Assets.xcassets */; };
 		E7170DD8251B827100B385A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7170DD7251B827100B385A9 /* Preview Assets.xcassets */; };
 		E7170DDB251B827100B385A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7170DD9251B827100B385A9 /* LaunchScreen.storyboard */; };
+<<<<<<< HEAD
 		E7556752253216F70084EDA0 /* DummyMealData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7556751253216F70084EDA0 /* DummyMealData.swift */; };
 		E78680A425309E1C004A8ABD /* DailyLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680A325309E1C004A8ABD /* DailyLogView.swift */; };
 		E78680A72530A9A8004A8ABD /* NutrientBreakdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680A62530A9A8004A8ABD /* NutrientBreakdownView.swift */; };
 		E78680AB2530B542004A8ABD /* MealCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680AA2530B542004A8ABD /* MealCardView.swift */; };
 		E78680AE2530C6D0004A8ABD /* MealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680AD2530C6D0004A8ABD /* MealModel.swift */; };
 		E78D715325350A8400C0F800 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78D715225350A8400C0F800 /* HomeView.swift */; };
+=======
+		E7232C0F2530E4D6003F3528 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7232C0E2530E4D6003F3528 /* GoogleService-Info.plist */; };
+		E72D2DAE2532948C00DA7090 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D2DAD2532948C00DA7090 /* AuthView.swift */; };
+		E72D2DBF25329AF200DA7090 /* Southampton.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E72D2DBE25329AF200DA7090 /* Southampton.ttf */; };
+		E78680A425309E1C004A8ABD /* DailyLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680A325309E1C004A8ABD /* DailyLogView.swift */; };
+		E78680A72530A9A8004A8ABD /* NutrientBreakdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680A62530A9A8004A8ABD /* NutrientBreakdownView.swift */; };
+		E78680AB2530B542004A8ABD /* MealCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680AA2530B542004A8ABD /* MealCardView.swift */; };
+		E7AD96A02530E7070060CA75 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AD969F2530E7070060CA75 /* SessionStore.swift */; };
+>>>>>>> Login-/-Signup
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B669A5F99EB13FBBB3A923C /* Pods-Capstone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Capstone.debug.xcconfig"; path = "Target Support Files/Pods-Capstone/Pods-Capstone.debug.xcconfig"; sourceTree = "<group>"; };
+		BB51DE1DBCDBD1793DCB6887 /* Pods-Capstone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Capstone.release.xcconfig"; path = "Target Support Files/Pods-Capstone/Pods-Capstone.release.xcconfig"; sourceTree = "<group>"; };
 		E7170DCB251B826900B385A9 /* Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7170DCE251B826900B385A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7170DD0251B826900B385A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,12 +43,23 @@
 		E7170DD7251B827100B385A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E7170DDA251B827100B385A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7170DDC251B827100B385A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		E7556751253216F70084EDA0 /* DummyMealData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyMealData.swift; sourceTree = "<group>"; };
 		E78680A325309E1C004A8ABD /* DailyLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLogView.swift; sourceTree = "<group>"; };
 		E78680A62530A9A8004A8ABD /* NutrientBreakdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientBreakdownView.swift; sourceTree = "<group>"; };
 		E78680AA2530B542004A8ABD /* MealCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCardView.swift; sourceTree = "<group>"; };
 		E78680AD2530C6D0004A8ABD /* MealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealModel.swift; sourceTree = "<group>"; };
 		E78D715225350A8400C0F800 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+=======
+		E7232C0E2530E4D6003F3528 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E72D2DAD2532948C00DA7090 /* AuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		E72D2DBE25329AF200DA7090 /* Southampton.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Southampton.ttf; sourceTree = "<group>"; };
+		E78680A325309E1C004A8ABD /* DailyLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLogView.swift; sourceTree = "<group>"; };
+		E78680A62530A9A8004A8ABD /* NutrientBreakdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientBreakdownView.swift; sourceTree = "<group>"; };
+		E78680AA2530B542004A8ABD /* MealCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCardView.swift; sourceTree = "<group>"; };
+		E7AD969F2530E7070060CA75 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		F682874444DE396D8986066D /* Pods_Capstone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Capstone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+>>>>>>> Login-/-Signup
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +67,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E62D3B51F2063132B9E5B801 /* Pods_Capstone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DF88A36B6DD08F9A9899B7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F682874444DE396D8986066D /* Pods_Capstone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		510445211C3589806D01BAD2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B669A5F99EB13FBBB3A923C /* Pods-Capstone.debug.xcconfig */,
+				BB51DE1DBCDBD1793DCB6887 /* Pods-Capstone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E7170DC2251B826900B385A9 = {
 			isa = PBXGroup;
 			children = (
 				E7170DCD251B826900B385A9 /* Capstone */,
 				E7170DCC251B826900B385A9 /* Products */,
+				510445211C3589806D01BAD2 /* Pods */,
+				1DF88A36B6DD08F9A9899B7A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,12 +116,16 @@
 				E7170DCE251B826900B385A9 /* AppDelegate.swift */,
 				E7170DD0251B826900B385A9 /* SceneDelegate.swift */,
 				E7170DD2251B826900B385A9 /* ContentView.swift */,
+				E72D2DAD2532948C00DA7090 /* AuthView.swift */,
+				E7AD969F2530E7070060CA75 /* SessionStore.swift */,
+				E7170DD4251B827100B385A9 /* Assets.xcassets */,
 				E78680A325309E1C004A8ABD /* DailyLogView.swift */,
 				E78680AA2530B542004A8ABD /* MealCardView.swift */,
 				E78680A62530A9A8004A8ABD /* NutrientBreakdownView.swift */,
-				E7170DD4251B827100B385A9 /* Assets.xcassets */,
 				E7170DD9251B827100B385A9 /* LaunchScreen.storyboard */,
 				E7170DDC251B827100B385A9 /* Info.plist */,
+				E7232C0E2530E4D6003F3528 /* GoogleService-Info.plist */,
+				E72D2DB02532954800DA7090 /* Fonts */,
 				E7170DD6251B827100B385A9 /* Preview Content */,
 				E7556751253216F70084EDA0 /* DummyMealData.swift */,
 				E78D715225350A8400C0F800 /* HomeView.swift */,
@@ -93,6 +141,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E72D2DB02532954800DA7090 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E72D2DBE25329AF200DA7090 /* Southampton.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -100,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7170DDF251B827100B385A9 /* Build configuration list for PBXNativeTarget "Capstone" */;
 			buildPhases = (
+				69944871B08EB5821499E9FF /* [CP] Check Pods Manifest.lock */,
 				E7170DC7251B826900B385A9 /* Sources */,
 				E7170DC8251B826900B385A9 /* Frameworks */,
 				E7170DC9251B826900B385A9 /* Resources */,
+				F1AA5B7D147CA92549402D3D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,12 +210,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7170DDB251B827100B385A9 /* LaunchScreen.storyboard in Resources */,
+				E7232C0F2530E4D6003F3528 /* GoogleService-Info.plist in Resources */,
+				E72D2DBF25329AF200DA7090 /* Southampton.ttf in Resources */,
 				E7170DD8251B827100B385A9 /* Preview Assets.xcassets in Resources */,
 				E7170DD5251B827100B385A9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		69944871B08EB5821499E9FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Capstone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1AA5B7D147CA92549402D3D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Capstone/Pods-Capstone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Capstone/Pods-Capstone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Capstone/Pods-Capstone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E7170DC7251B826900B385A9 /* Sources */ = {
@@ -172,6 +274,8 @@
 				E7170DCF251B826900B385A9 /* AppDelegate.swift in Sources */,
 				E78680A425309E1C004A8ABD /* DailyLogView.swift in Sources */,
 				E7170DD1251B826900B385A9 /* SceneDelegate.swift in Sources */,
+				E7AD96A02530E7070060CA75 /* SessionStore.swift in Sources */,
+				E72D2DAE2532948C00DA7090 /* AuthView.swift in Sources */,
 				E7170DD3251B826900B385A9 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +412,7 @@
 		};
 		E7170DE0251B827100B385A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B669A5F99EB13FBBB3A923C /* Pods-Capstone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -328,6 +433,7 @@
 		};
 		E7170DE1251B827100B385A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB51DE1DBCDBD1793DCB6887 /* Pods-Capstone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
