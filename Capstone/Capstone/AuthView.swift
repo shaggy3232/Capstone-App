@@ -36,13 +36,21 @@ struct SignInView: View {
                 EmailTextField(email: $email)
                 PasswordSecureField(password: $password)
                 Button(action: signIn) {
-                    LoginButtonContent()
+                    Text("LOGIN")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 220, height: 60)
+                        .background(Color.black)
+                        .cornerRadius(35.0)
+                        .offset(y: 80)
                 }
                 
                 if (error != "") {
                     Text(error)
-                        .offset(y: -10)
+                        .offset(y: -20)
                         .foregroundColor(.red)
+                        
                 }
                 
                 Spacer()
@@ -157,19 +165,6 @@ struct TintOverlay: View {
 //
 //    }
 //}
-
-struct LoginButtonContent: View {
-    var body: some View {
-        Text("LOGIN")
-            .font(.headline)
-            .foregroundColor(.white)
-            .padding()
-            .frame(width: 220, height: 60)
-            .background(Color.black)
-            .cornerRadius(35.0)
-            .offset(y: 80)
-    }
-}
 
 struct EmailTextField: View {
     @Binding var email: String
