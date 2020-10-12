@@ -18,7 +18,7 @@ struct ContentView: View {
                         
                         NutrientBreakdownView().tag(0)
                         
-                        DailyLogView().tag(1)
+                        DailyLogView(meals: Meal_data).tag(1)
                         
     
                     }

@@ -11,32 +11,40 @@ import SwiftUI
 struct MealCardView: View {
     
     
-    @Binding var mealName:String
-    @Binding var totalCalories:String
-    @Binding var mealTime:String
-    @Binding var mealImage:String
+    @Binding var meal: Meal 
+   
     
     var body: some View {
         ZStack{
             HStack{
                 VStack{
-                    Text(mealName)
-                        .bold()
+                    Text(meal.Name)
+                        .font(.title)
                         .foregroundColor(.white)
-                    Text("Calories:\(totalCalories)")
-                        .foregroundColor(.white)
+                    Spacer()
+                    HStack{
+                        VStack{
+                        Spacer(minLength: 0)
+                        Text("Calories:\(meal.totalCalories)")
+                            .foregroundColor(.white)
+                            Text("Time:\(meal.Time)")
+                            .foregroundColor(.white)
+                        }
+                    }
                 }
             }
         }
         .padding(10)
-        .background(Color.blue)
+        .background(Color( red: 45/100, green: 80/100, blue: 55/100))
         .cornerRadius(20)
+        .shadow(radius: 10)
     }
 }
 
 
-struct MealCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        MealCardView( mealName: Binding.constant("blac"), totalCalories: Binding.constant("adsf"), mealTime: Binding.constant("adad"), mealImage: Binding.constant("adfads"))
-    }
-}
+//struct MealCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//
+//        MealCardView( meal:)
+//    }
+//}
