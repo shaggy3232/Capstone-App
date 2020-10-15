@@ -19,19 +19,22 @@ struct ContentView: View {
         Group {
             if (session.session != nil) {
                 Text("Welcome back")
+                Button(action: session.signOut) {
+                    Text ("Sign Out")
+                }
             } else {
                 AuthView()
             }
         }.onAppear(perform: getUser)
             ZStack{
-                VStack{
-                    TabView{
-                        NutrientBreakdownView().tag(0)
-                        DailyLogView().tag(1)
-                    }
-                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+//                VStack{
+  //                  TabView{
+    //                    NutrientBreakdownView().tag(0)
+      //                  DailyLogView().tag(1)
+        //            }
+          //          .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
              
-      }
+    //  }
     }
         
         

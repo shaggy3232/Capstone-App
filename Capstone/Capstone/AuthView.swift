@@ -36,7 +36,7 @@ struct SignInView: View {
                 EmailTextField(email: $email)
                 PasswordSecureField(password: $password)
                 Button(action: signIn) {
-                    Text("LOGIN")
+                    Text("Log In")
                         .font(.headline)
                         .foregroundColor(.white)
                         .padding()
@@ -48,7 +48,7 @@ struct SignInView: View {
                 
                 if (error != "") {
                     Text(error)
-                        .offset(y: -20)
+                        .offset(y: 85)
                         .foregroundColor(.red)
                         
                 }
@@ -96,16 +96,47 @@ struct SignUpView: View {
                 .font(.system(size: 32, weight: .heavy))
                 .offset()
                 .padding(1)
+                .offset(y: -70)
             
             Text("It's quick and easy")
                 .font(.system(size: 18, weight: .medium))
                 .offset()
                 .padding(1)
+                .offset(y: -70)
             
-            EmailTextField(email: $email)
-            PasswordSecureField(password: $password)
+            TextField("Email", text: $email)
+                .padding()
+                .background(lightGreyColor)
+                .cornerRadius(15.0)
+                .padding(.bottom, 20)
+                .offset(y: 25)
+                .padding(.horizontal, 20)
+            SecureField("New Password", text: $password)
+                .padding()
+                .background(lightGreyColor)
+                .cornerRadius(15.0)
+                .padding(.bottom, 50)
+                .offset(y: 25)
+                .padding(.horizontal, 20)
+            Button(action: signUp) {
+                Text("Sign Up")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(width: 220, height: 60)
+                    .background(Color.black)
+                    .cornerRadius(35.0)
+                    .offset(y: 25)
+            }
+            if (error != "") {
+                Text(error)
+                    .offset(y: -20)
+                    .foregroundColor(.red)
+            }
         }
     }
+    
+    
 }
 
 // AUTH VIEW //
@@ -135,8 +166,6 @@ struct NetDietTrackerTitle: View {
                 .offset(y: 0)
     }
 }
-
-// Special Thanks to Karin for the Name and the Font.
 
 struct TintOverlay: View {
   var body: some View {
