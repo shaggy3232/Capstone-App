@@ -43,8 +43,8 @@ struct SignInView: View {
                         .frame(width: 220, height: 60)
                         .background(Color.black)
                         .cornerRadius(35.0)
-                        .offset(y: 80)
-                }
+                        
+                }.offset(y: 80)
                 
                 if (error != "") {
                     Text(error)
@@ -75,7 +75,6 @@ struct SignInView: View {
 struct SignUpView: View {
     @State var email: String = ""
     @State var password: String = ""
-    @State var name: String = ""
     @State var error: String = ""
     @EnvironmentObject var session: SessionStore
     
@@ -126,11 +125,10 @@ struct SignUpView: View {
                     .frame(width: 220, height: 60)
                     .background(Color.black)
                     .cornerRadius(35.0)
-                    .offset(y: 25)
-            }
+            }.offset(y: 25)
             if (error != "") {
                 Text(error)
-                    .offset(y: -20)
+                    .offset(y: 40)
                     .foregroundColor(.red)
             }
         }
