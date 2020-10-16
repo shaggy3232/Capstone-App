@@ -157,11 +157,13 @@ struct AuthView_Previews: PreviewProvider {
 
 struct NetDietTrackerTitle: View {
     var body: some View {
-            Text("victu")
+            Text(" Diet Tracker")
                 .foregroundColor(Color.black)
-                .font(.custom("Southampton", size: 170.0))
-                .padding(.bottom, 25)
                 .offset(y: 0)
+                .padding(.horizontal, 40)
+                .font(.custom("Southampton", size: 100.0))
+                .padding(.bottom, -5)
+                
     }
 }
 
