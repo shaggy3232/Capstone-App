@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0C02E12560652B0015B2AB /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C02E02560652B0015B2AB /* CalendarView.swift */; };
 		E7170DCF251B826900B385A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7170DCE251B826900B385A9 /* AppDelegate.swift */; };
 		E7170DD1251B826900B385A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7170DD0251B826900B385A9 /* SceneDelegate.swift */; };
 		E7170DD3251B826900B385A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7170DD2251B826900B385A9 /* ContentView.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C0C02E02560652B0015B2AB /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		E7170DCB251B826900B385A9 /* Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7170DCE251B826900B385A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7170DD0251B826900B385A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				E78680A62530A9A8004A8ABD /* NutrientBreakdownView.swift */,
 				E7170DD4251B827100B385A9 /* Assets.xcassets */,
 				E7170DD9251B827100B385A9 /* LaunchScreen.storyboard */,
+				4C0C02E02560652B0015B2AB /* CalendarView.swift */,
 				E7170DDC251B827100B385A9 /* Info.plist */,
 				E7170DD6251B827100B385A9 /* Preview Content */,
 				E7556751253216F70084EDA0 /* DummyMealData.swift */,
@@ -168,6 +171,7 @@
 				E78680AE2530C6D0004A8ABD /* MealModel.swift in Sources */,
 				E78680A72530A9A8004A8ABD /* NutrientBreakdownView.swift in Sources */,
 				E78680AB2530B542004A8ABD /* MealCardView.swift in Sources */,
+				4C0C02E12560652B0015B2AB /* CalendarView.swift in Sources */,
 				E7556752253216F70084EDA0 /* DummyMealData.swift in Sources */,
 				E7170DCF251B826900B385A9 /* AppDelegate.swift in Sources */,
 				E78680A425309E1C004A8ABD /* DailyLogView.swift in Sources */,
