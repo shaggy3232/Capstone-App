@@ -35,6 +35,9 @@ struct ContentView: View {
                 AuthView()
             }
         }.onAppear(perform: getUser)
+           
+        
+        
   }
 }
 

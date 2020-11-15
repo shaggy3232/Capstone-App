@@ -21,9 +21,9 @@
 		E78680A72530A9A8004A8ABD /* NutrientBreakdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680A62530A9A8004A8ABD /* NutrientBreakdownView.swift */; };
 		E78680AB2530B542004A8ABD /* MealCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680AA2530B542004A8ABD /* MealCardView.swift */; };
 		E7AD96A02530E7070060CA75 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AD969F2530E7070060CA75 /* SessionStore.swift */; };
-		E7E5554D2560A48D0008DEF2 /* DummyMealData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5554C2560A48D0008DEF2 /* DummyMealData.swift */; };
-		E7E555502560A4980008DEF2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5554F2560A4980008DEF2 /* HomeView.swift */; };
-		E7E555532560A4B50008DEF2 /* MealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E555522560A4B50008DEF2 /* MealModel.swift */; };
+		E7BFB3922560A7B9001CB6D7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BFB3912560A7B9001CB6D7 /* HomeView.swift */; };
+		E7BFB3952560A7FB001CB6D7 /* MealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BFB3942560A7FB001CB6D7 /* MealModel.swift */; };
+		E7BFB3982560A800001CB6D7 /* DummyMealData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BFB3972560A800001CB6D7 /* DummyMealData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,9 +44,9 @@
 		E78680A62530A9A8004A8ABD /* NutrientBreakdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientBreakdownView.swift; sourceTree = "<group>"; };
 		E78680AA2530B542004A8ABD /* MealCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCardView.swift; sourceTree = "<group>"; };
 		E7AD969F2530E7070060CA75 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
-		E7E5554C2560A48D0008DEF2 /* DummyMealData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyMealData.swift; sourceTree = "<group>"; };
-		E7E5554F2560A4980008DEF2 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		E7E555522560A4B50008DEF2 /* MealModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealModel.swift; sourceTree = "<group>"; };
+		E7BFB3912560A7B9001CB6D7 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E7BFB3942560A7FB001CB6D7 /* MealModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealModel.swift; sourceTree = "<group>"; };
+		E7BFB3972560A800001CB6D7 /* DummyMealData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyMealData.swift; sourceTree = "<group>"; };
 		F682874444DE396D8986066D /* Pods_Capstone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Capstone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,10 +107,10 @@
 				E7AD969F2530E7070060CA75 /* SessionStore.swift */,
 				E7170DD4251B827100B385A9 /* Assets.xcassets */,
 				E78680A325309E1C004A8ABD /* DailyLogView.swift */,
+				E7BFB3912560A7B9001CB6D7 /* HomeView.swift */,
+				E7BFB3972560A800001CB6D7 /* DummyMealData.swift */,
+				E7BFB3942560A7FB001CB6D7 /* MealModel.swift */,
 				E78680AA2530B542004A8ABD /* MealCardView.swift */,
-				E7E555522560A4B50008DEF2 /* MealModel.swift */,
-				E7E5554F2560A4980008DEF2 /* HomeView.swift */,
-				E7E5554C2560A48D0008DEF2 /* DummyMealData.swift */,
 				E78680A62530A9A8004A8ABD /* NutrientBreakdownView.swift */,
 				E7170DD9251B827100B385A9 /* LaunchScreen.storyboard */,
 				E7170DDC251B827100B385A9 /* Info.plist */,
@@ -254,16 +254,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7BFB3952560A7FB001CB6D7 /* MealModel.swift in Sources */,
+				E7BFB3922560A7B9001CB6D7 /* HomeView.swift in Sources */,
 				E78680A72530A9A8004A8ABD /* NutrientBreakdownView.swift in Sources */,
 				E78680AB2530B542004A8ABD /* MealCardView.swift in Sources */,
 				E7170DCF251B826900B385A9 /* AppDelegate.swift in Sources */,
-				E7E555532560A4B50008DEF2 /* MealModel.swift in Sources */,
-				E7E555502560A4980008DEF2 /* HomeView.swift in Sources */,
-				E7E5554D2560A48D0008DEF2 /* DummyMealData.swift in Sources */,
 				E78680A425309E1C004A8ABD /* DailyLogView.swift in Sources */,
 				E7170DD1251B826900B385A9 /* SceneDelegate.swift in Sources */,
 				E7AD96A02530E7070060CA75 /* SessionStore.swift in Sources */,
 				E72D2DAE2532948C00DA7090 /* AuthView.swift in Sources */,
+				E7BFB3982560A800001CB6D7 /* DummyMealData.swift in Sources */,
 				E7170DD3251B826900B385A9 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
