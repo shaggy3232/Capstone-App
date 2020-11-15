@@ -18,7 +18,16 @@ struct ContentView: View {
     var body: some View {
         Group {
             if (session.session != nil) {
-                Text("Welcome back")
+                ZStack{
+                    VStack{
+                        TabView{
+                            NutrientBreakdownView().tag(0)
+                            DailyLogView(meals: Meal_data).tag(1)
+                        }
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                 
+          }
+        }
                 Button(action: session.signOut) {
                     Text ("Sign Out")
                 }
@@ -26,16 +35,7 @@ struct ContentView: View {
                 AuthView()
             }
         }.onAppear(perform: getUser)
-            ZStack{
-//                VStack{
-  //                  TabView{
-    //                    NutrientBreakdownView().tag(0)
-      //                  DailyLogView().tag(1)
-        //            }
-          //          .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-             
-    //  }
-    }
+           
         
         
   }
