@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9AFF86AA4E8F280C5C106E0E /* Pods_Capstone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 716A32D243DA82EB5C5D5C92 /* Pods_Capstone.framework */; };
 		E7170DCF251B826900B385A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7170DCE251B826900B385A9 /* AppDelegate.swift */; };
 		E7170DD1251B826900B385A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7170DD0251B826900B385A9 /* SceneDelegate.swift */; };
 		E7170DD3251B826900B385A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7170DD2251B826900B385A9 /* ContentView.swift */; };
@@ -19,9 +20,13 @@
 		E78680AB2530B542004A8ABD /* MealCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680AA2530B542004A8ABD /* MealCardView.swift */; };
 		E78680AE2530C6D0004A8ABD /* MealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680AD2530C6D0004A8ABD /* MealModel.swift */; };
 		E78D715325350A8400C0F800 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78D715225350A8400C0F800 /* HomeView.swift */; };
+		E7CAB5E525608C2D00993BA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7CAB5E425608C2D00993BA8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7042F2A5759D4A083D0DB9A2 /* Pods-Capstone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Capstone.debug.xcconfig"; path = "Target Support Files/Pods-Capstone/Pods-Capstone.debug.xcconfig"; sourceTree = "<group>"; };
+		716A32D243DA82EB5C5D5C92 /* Pods_Capstone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Capstone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0B962FE442D0AE81A7B70FB /* Pods-Capstone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Capstone.release.xcconfig"; path = "Target Support Files/Pods-Capstone/Pods-Capstone.release.xcconfig"; sourceTree = "<group>"; };
 		E7170DCB251B826900B385A9 /* Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7170DCE251B826900B385A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7170DD0251B826900B385A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +41,7 @@
 		E78680AA2530B542004A8ABD /* MealCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCardView.swift; sourceTree = "<group>"; };
 		E78680AD2530C6D0004A8ABD /* MealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealModel.swift; sourceTree = "<group>"; };
 		E78D715225350A8400C0F800 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E7CAB5E425608C2D00993BA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +49,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AFF86AA4E8F280C5C106E0E /* Pods_Capstone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0BBC5A959B77A6F1416A029 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				716A32D243DA82EB5C5D5C92 /* Pods_Capstone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D896C1AB706CD777F4C91BF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7042F2A5759D4A083D0DB9A2 /* Pods-Capstone.debug.xcconfig */,
+				A0B962FE442D0AE81A7B70FB /* Pods-Capstone.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E7170DC2251B826900B385A9 = {
 			isa = PBXGroup;
 			children = (
 				E7170DCD251B826900B385A9 /* Capstone */,
 				E7170DCC251B826900B385A9 /* Products */,
+				D896C1AB706CD777F4C91BF7 /* Pods */,
+				A0BBC5A959B77A6F1416A029 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +104,7 @@
 				E78680A62530A9A8004A8ABD /* NutrientBreakdownView.swift */,
 				E7170DD4251B827100B385A9 /* Assets.xcassets */,
 				E7170DD9251B827100B385A9 /* LaunchScreen.storyboard */,
+				E7CAB5E425608C2D00993BA8 /* GoogleService-Info.plist */,
 				E7170DDC251B827100B385A9 /* Info.plist */,
 				E7170DD6251B827100B385A9 /* Preview Content */,
 				E7556751253216F70084EDA0 /* DummyMealData.swift */,
@@ -100,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7170DDF251B827100B385A9 /* Build configuration list for PBXNativeTarget "Capstone" */;
 			buildPhases = (
+				6BDA78EE2E7B34F5CD525085 /* [CP] Check Pods Manifest.lock */,
 				E7170DC7251B826900B385A9 /* Sources */,
 				E7170DC8251B826900B385A9 /* Frameworks */,
 				E7170DC9251B826900B385A9 /* Resources */,
+				0F2E76FD3368A9097835C734 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,12 +182,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7170DDB251B827100B385A9 /* LaunchScreen.storyboard in Resources */,
+				E7CAB5E525608C2D00993BA8 /* GoogleService-Info.plist in Resources */,
 				E7170DD8251B827100B385A9 /* Preview Assets.xcassets in Resources */,
 				E7170DD5251B827100B385A9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F2E76FD3368A9097835C734 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Capstone/Pods-Capstone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Capstone/Pods-Capstone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Capstone/Pods-Capstone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BDA78EE2E7B34F5CD525085 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Capstone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E7170DC7251B826900B385A9 /* Sources */ = {
@@ -308,6 +381,7 @@
 		};
 		E7170DE0251B827100B385A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7042F2A5759D4A083D0DB9A2 /* Pods-Capstone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -328,6 +402,7 @@
 		};
 		E7170DE1251B827100B385A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0B962FE442D0AE81A7B70FB /* Pods-Capstone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
