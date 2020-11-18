@@ -14,7 +14,6 @@ import Foundation
     var id = UUID()
     var Name : String
     var Time : String
-    var totalCalories : Int
-    var Image : String
+    var Weight : String
 
 }

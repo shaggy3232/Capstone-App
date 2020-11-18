@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @ObservedObject var viewmodel = MealViewModel()
     var body: some View {
         
             ZStack{
@@ -18,14 +18,16 @@ struct ContentView: View {
                         
                         NutrientBreakdownView().tag(0)
                         
-                        DailyLogView(meals: Meal_data).tag(1)
+                        DailyLogView(meals: viewmodel.Meal_data).tag(1)
                         
     
                     }
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
              
       }
-    }
+            }.onAppear(){
+                viewmodel.getMeals()
+            }
   }
 }
 
