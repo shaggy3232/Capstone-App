@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject var viewModel = MealViewModel()
     var body: some View {
         
         ZStack{
@@ -17,7 +18,7 @@ struct HomeView: View {
                     
                     NutrientBreakdownView().tag(0)
                     
-                    DailyLogView(meals: Meal_data).tag(1)
+                    DailyLogView(meals: viewModel.Meal_data).tag(1)
                     
 
                 }

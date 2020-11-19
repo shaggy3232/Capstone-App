@@ -44,11 +44,11 @@ struct DailyLogView: View {
     }
 }
 
-struct DailyLogView_Previews: PreviewProvider {
-    static var previews: some View {
-        DailyLogView( meals: Meal_data)
-    }
-}
+//struct DailyLogView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DailyLogView( meals: Meal_data)
+//    }
+//}
 
 
 

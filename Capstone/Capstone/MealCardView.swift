@@ -11,7 +11,7 @@ import SwiftUI
 struct MealCardView: View {
     
     
-    @Binding var meal: Meal 
+    @Binding var meal: Meal
    
     
     var body: some View {
@@ -25,10 +25,9 @@ struct MealCardView: View {
                     HStack{
                         VStack{
                         Spacer(minLength: 0)
-                        Text("Calories:\(meal.totalCalories)")
+                        Text("Calories:\(meal.Weight)")
                             .foregroundColor(.white)
-                            Text("Time:\(meal.Time)")
-                            .foregroundColor(.white)
+                            
                         }
                     }
                 }

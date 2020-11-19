@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var session: SessionStore
+    @ObservedObject var viewmodel = MealViewModel()
     
     func getUser() {
         session.listen()
@@ -22,11 +23,13 @@ struct ContentView: View {
                     VStack{
                         TabView{
                             NutrientBreakdownView().tag(0)
-                            DailyLogView(meals: Meal_data).tag(1)
+                            DailyLogView(meals: viewmodel.Meal_data).tag(1)
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                  
           }
+        }.onAppear(){
+            viewmodel.getMeals()
         }
                 Button(action: session.signOut) {
                     Text ("Sign Out")
