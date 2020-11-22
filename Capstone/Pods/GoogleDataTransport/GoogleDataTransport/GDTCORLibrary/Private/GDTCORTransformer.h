@@ -16,7 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "GoogleDataTransport/GDTCORLibrary/Internal/GDTCORLifecycle.h"
+#import <GoogleDataTransport/GDTCORLifecycle.h>
 
 @class GDTCOREvent;
 
@@ -49,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)transformEvent:(GDTCOREvent *)event
       withTransformers:(nullable NSArray<id<GDTCOREventTransformer>> *)transformers
-            onComplete:(void (^_Nullable)(BOOL wasWritten, NSError *_Nullable error))completion;
+            onComplete:(void (^)(BOOL wasWritten, NSError *_Nullable error))completion;
 
 @end
 

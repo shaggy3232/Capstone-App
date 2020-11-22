@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-#import "FirebaseInstallations/Source/Library/InstallationsAPI/FIRInstallationsAPIService.h"
+#import "FIRInstallationsAPIService.h"
+
+#import <FirebaseInstallations/FIRInstallationsVersion.h>
 
 #if __has_include(<FBLPromises/FBLPromises.h>)
 #import <FBLPromises/FBLPromises.h>
@@ -22,11 +24,11 @@
 #import "FBLPromises.h"
 #endif
 
-#import "FirebaseCore/Sources/Private/FirebaseCoreInternal.h"
-#import "FirebaseInstallations/Source/Library/Errors/FIRInstallationsErrorUtil.h"
-#import "FirebaseInstallations/Source/Library/Errors/FIRInstallationsHTTPError.h"
-#import "FirebaseInstallations/Source/Library/FIRInstallationsLogger.h"
-#import "FirebaseInstallations/Source/Library/InstallationsAPI/FIRInstallationsItem+RegisterInstallationAPI.h"
+#import <FirebaseCore/FIRAppInternal.h>
+#import <FirebaseCore/FIRHeartbeatInfo.h>
+#import "FIRInstallationsErrorUtil.h"
+#import "FIRInstallationsItem+RegisterInstallationAPI.h"
+#import "FIRInstallationsLogger.h"
 
 NSString *const kFIRInstallationsAPIBaseURL = @"https://firebaseinstallations.googleapis.com";
 NSString *const kFIRInstallationsAPIKey = @"X-Goog-Api-Key";
@@ -70,7 +72,7 @@ NS_ASSUME_NONNULL_END
 
 - (instancetype)initWithAPIKey:(NSString *)APIKey projectID:(NSString *)projectID {
   NSURLSession *URLSession = [NSURLSession
-      sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]];
+      sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
   return [self initWithURLSession:URLSession APIKey:APIKey projectID:projectID];
 }
 
@@ -90,24 +92,17 @@ NS_ASSUME_NONNULL_END
 #pragma mark - Public
 
 - (FBLPromise<FIRInstallationsItem *> *)registerInstallation:(FIRInstallationsItem *)installation {
-  return [self validateInstallation:installation]
-      .then(^id _Nullable(FIRInstallationsItem *_Nullable validInstallation) {
-        return [self registerRequestWithInstallation:validInstallation];
-      })
-      .then(^id _Nullable(NSURLRequest *_Nullable request) {
-        return [self sendURLRequest:request];
-      })
-      .then(^id _Nullable(FIRInstallationsURLSessionResponse *response) {
+  NSURLRequest *request = [self registerRequestWithInstallation:installation];
+  return [self sendURLRequest:request].then(
+      ^id _Nullable(FIRInstallationsURLSessionResponse *response) {
         return [self registeredInstallationWithInstallation:installation serverResponse:response];
       });
 }
 
 - (FBLPromise<FIRInstallationsItem *> *)refreshAuthTokenForInstallation:
     (FIRInstallationsItem *)installation {
-  return [self authTokenRequestWithInstallation:installation]
-      .then(^id _Nullable(NSURLRequest *_Nullable request) {
-        return [self sendURLRequest:request];
-      })
+  NSURLRequest *request = [self authTokenRequestWithInstallation:installation];
+  return [self sendURLRequest:request]
       .then(^FBLPromise<FIRInstallationsStoredAuthToken *> *(
           FIRInstallationsURLSessionResponse *response) {
         return [self authTokenWithServerResponse:response];
@@ -120,28 +115,23 @@ NS_ASSUME_NONNULL_END
 }
 
 - (FBLPromise<FIRInstallationsItem *> *)deleteInstallation:(FIRInstallationsItem *)installation {
-  return [self deleteInstallationRequestWithInstallation:installation]
-      .then(^id _Nullable(NSURLRequest *_Nullable request) {
-        return [self sendURLRequest:request];
-      })
-      .then(^id _Nullable(FIRInstallationsURLSessionResponse *_Nullable value) {
+  NSURLRequest *request = [self deleteInstallationRequestWithInstallation:installation];
+  return [[self sendURLRequest:request]
+      then:^id _Nullable(FIRInstallationsURLSessionResponse *_Nullable value) {
         // Return the original installation on success.
         return installation;
-      });
+      }];
 }
 
 #pragma mark - Register Installation
 
-- (FBLPromise<NSURLRequest *> *)registerRequestWithInstallation:
-    (FIRInstallationsItem *)installation {
+- (NSURLRequest *)registerRequestWithInstallation:(FIRInstallationsItem *)installation {
   NSString *URLString = [NSString stringWithFormat:@"%@/v1/projects/%@/installations/",
                                                    kFIRInstallationsAPIBaseURL, self.projectID];
   NSURL *URL = [NSURL URLWithString:URLString];
 
   NSDictionary *bodyDict = @{
-    // `firebaseInstallationID` is validated before but let's make sure it is not `nil` one more
-    // time to prevent a crash.
-    @"fid" : installation.firebaseInstallationID ?: @"",
+    @"fid" : installation.firebaseInstallationID,
     @"authVersion" : @"FIS_v2",
     @"appId" : installation.appID,
     @"sdkVersion" : [self SDKVersion]
@@ -186,8 +176,7 @@ NS_ASSUME_NONNULL_END
 
 #pragma mark - Auth token
 
-- (FBLPromise<NSURLRequest *> *)authTokenRequestWithInstallation:
-    (FIRInstallationsItem *)installation {
+- (NSURLRequest *)authTokenRequestWithInstallation:(FIRInstallationsItem *)installation {
   NSString *URLString =
       [NSString stringWithFormat:@"%@/v1/projects/%@/installations/%@/authTokens:generate",
                                  kFIRInstallationsAPIBaseURL, self.projectID,
@@ -227,8 +216,7 @@ NS_ASSUME_NONNULL_END
 
 #pragma mark - Delete Installation
 
-- (FBLPromise<NSURLRequest *> *)deleteInstallationRequestWithInstallation:
-    (FIRInstallationsItem *)installation {
+- (NSURLRequest *)deleteInstallationRequestWithInstallation:(FIRInstallationsItem *)installation {
   NSString *URLString = [NSString stringWithFormat:@"%@/v1/projects/%@/installations/%@/",
                                                    kFIRInstallationsAPIBaseURL, self.projectID,
                                                    installation.firebaseInstallationID];
@@ -241,10 +229,10 @@ NS_ASSUME_NONNULL_END
 }
 
 #pragma mark - URL Request
-- (FBLPromise<NSURLRequest *> *)requestWithURL:(NSURL *)requestURL
-                                    HTTPMethod:(NSString *)HTTPMethod
-                                      bodyDict:(NSDictionary *)bodyDict
-                                  refreshToken:(nullable NSString *)refreshToken {
+- (NSURLRequest *)requestWithURL:(NSURL *)requestURL
+                      HTTPMethod:(NSString *)HTTPMethod
+                        bodyDict:(NSDictionary *)bodyDict
+                    refreshToken:(nullable NSString *)refreshToken {
   return [self requestWithURL:requestURL
                    HTTPMethod:HTTPMethod
                      bodyDict:bodyDict
@@ -252,41 +240,34 @@ NS_ASSUME_NONNULL_END
             additionalHeaders:nil];
 }
 
-- (FBLPromise<NSURLRequest *> *)requestWithURL:(NSURL *)requestURL
-                                    HTTPMethod:(NSString *)HTTPMethod
-                                      bodyDict:(NSDictionary *)bodyDict
-                                  refreshToken:(nullable NSString *)refreshToken
-                             additionalHeaders:(nullable NSDictionary<NSString *, NSString *> *)
-                                                   additionalHeaders {
-  return [FBLPromise
-      onQueue:dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)
-           do:^id _Nullable {
-             __block NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:requestURL];
-             request.HTTPMethod = HTTPMethod;
-             NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
-             [request addValue:self.APIKey forHTTPHeaderField:kFIRInstallationsAPIKey];
-             [request addValue:bundleIdentifier forHTTPHeaderField:kFIRInstallationsBundleId];
-             [self setJSONHTTPBody:bodyDict forRequest:request];
-             if (refreshToken) {
-               NSString *authHeader = [NSString stringWithFormat:@"FIS_v2 %@", refreshToken];
-               [request setValue:authHeader forHTTPHeaderField:@"Authorization"];
-             }
-             // User agent Header.
-             [request setValue:[FIRApp firebaseUserAgent]
-                 forHTTPHeaderField:kFIRInstallationsUserAgentKey];
-             // Heartbeat Header.
-             [request setValue:@([FIRHeartbeatInfo
-                                     heartbeatCodeForTag:kFIRInstallationsHeartbeatTag])
-                                   .stringValue
-                 forHTTPHeaderField:kFIRInstallationsHeartbeatKey];
-             [additionalHeaders
-                 enumerateKeysAndObjectsUsingBlock:^(NSString *_Nonnull key, NSString *_Nonnull obj,
-                                                     BOOL *_Nonnull stop) {
-                   [request setValue:obj forHTTPHeaderField:key];
-                 }];
+- (NSURLRequest *)requestWithURL:(NSURL *)requestURL
+                      HTTPMethod:(NSString *)HTTPMethod
+                        bodyDict:(NSDictionary *)bodyDict
+                    refreshToken:(nullable NSString *)refreshToken
+               additionalHeaders:
+                   (nullable NSDictionary<NSString *, NSString *> *)additionalHeaders {
+  __block NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:requestURL];
+  request.HTTPMethod = HTTPMethod;
+  NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
+  [request addValue:self.APIKey forHTTPHeaderField:kFIRInstallationsAPIKey];
+  [request addValue:bundleIdentifier forHTTPHeaderField:kFIRInstallationsBundleId];
+  [self setJSONHTTPBody:bodyDict forRequest:request];
+  if (refreshToken) {
+    NSString *authHeader = [NSString stringWithFormat:@"FIS_v2 %@", refreshToken];
+    [request setValue:authHeader forHTTPHeaderField:@"Authorization"];
+  }
+  // User agent Header.
+  [request setValue:[FIRApp firebaseUserAgent] forHTTPHeaderField:kFIRInstallationsUserAgentKey];
+  // Heartbeat Header.
+  [request setValue:@([FIRHeartbeatInfo heartbeatCodeForTag:kFIRInstallationsHeartbeatTag])
+                        .stringValue
+      forHTTPHeaderField:kFIRInstallationsHeartbeatKey];
+  [additionalHeaders enumerateKeysAndObjectsUsingBlock:^(
+                         NSString *_Nonnull key, NSString *_Nonnull obj, BOOL *_Nonnull stop) {
+    [request setValue:obj forHTTPHeaderField:key];
+  }];
 
-             return [request copy];
-           }];
+  return [request copy];
 }
 
 - (FBLPromise<FIRInstallationsURLSessionResponse *> *)URLRequestPromise:(NSURLRequest *)request {
@@ -337,8 +318,7 @@ NS_ASSUME_NONNULL_END
   return [FBLPromise attempts:1
       delay:1
       condition:^BOOL(NSInteger remainingAttempts, NSError *_Nonnull error) {
-        return [FIRInstallationsErrorUtil isAPIError:error
-                                        withHTTPCode:FIRInstallationsHTTPCodesServerInternalError];
+        return [FIRInstallationsErrorUtil isAPIError:error withHTTPCode:500];
       }
       retry:^id _Nullable {
         return [self URLRequestPromise:request];
@@ -346,21 +326,7 @@ NS_ASSUME_NONNULL_END
 }
 
 - (NSString *)SDKVersion {
-  return [NSString stringWithFormat:@"i:%@", FIRFirebaseVersion()];
-}
-
-#pragma mark - Validation
-
-- (FBLPromise<FIRInstallationsItem *> *)validateInstallation:(FIRInstallationsItem *)installation {
-  FBLPromise<FIRInstallationsItem *> *result = [FBLPromise pendingPromise];
-
-  NSError *validationError;
-  if ([installation isValid:&validationError]) {
-    [result fulfill:installation];
-  } else {
-    [result reject:validationError];
-  }
-  return result;
+  return [NSString stringWithFormat:@"i:%s", FIRInstallationsVersionStr];
 }
 
 #pragma mark - JSON

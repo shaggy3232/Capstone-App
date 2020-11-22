@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#import "FirebaseStorage/Sources/Public/FirebaseStorage/FIRStorageTask.h"
+#import <FirebaseStorage/FIRStorageTask.h>
 
 @class GTMSessionFetcherService;
 

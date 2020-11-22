@@ -12,22 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "FirebaseStorage/Sources/Public/FirebaseStorage/FIRStorageTask.h"
+#import <FirebaseStorage/FIRStorageTask.h>
 
-#import "FirebaseStorage/Sources/Public/FirebaseStorage/FIRStorage.h"
-#import "FirebaseStorage/Sources/Public/FirebaseStorage/FIRStorageReference.h"
-#import "FirebaseStorage/Sources/Public/FirebaseStorage/FIRStorageTaskSnapshot.h"
-
+#import <FirebaseStorage/FIRStorage.h>
+#import <FirebaseStorage/FIRStorageReference.h>
+#import <FirebaseStorage/FIRStorageTaskSnapshot.h>
 #import "FirebaseStorage/Sources/FIRStorageReference_Private.h"
 #import "FirebaseStorage/Sources/FIRStorageTaskSnapshot_Private.h"
 #import "FirebaseStorage/Sources/FIRStorageTask_Private.h"
 #import "FirebaseStorage/Sources/FIRStorage_Private.h"
 
-#if SWIFT_PACKAGE
-@import GTMSessionFetcherCore;
-#else
 #import <GTMSessionFetcher/GTMSessionFetcherService.h>
-#endif
 
 @implementation FIRStorageTask
 
@@ -45,7 +40,7 @@
     _reference = reference;
     _baseRequest = [FIRStorageUtils defaultRequestForPath:reference.path];
     _fetcherService = service;
-    _fetcherService.maxRetryInterval = _reference.storage.maxOperationRetryInterval;
+    _fetcherService.maxRetryInterval = _reference.storage.maxOperationRetryTime;
     _dispatchQueue = queue;
   }
   return self;

@@ -12,13 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "FirebaseStorage/Sources/Public/FirebaseStorage/FIRStorageDownloadTask.h"
+#import <FirebaseStorage/FIRStorageDownloadTask.h>
 
 #import "FirebaseStorage/Sources/FIRStorageConstants_Private.h"
 #import "FirebaseStorage/Sources/FIRStorageDownloadTask_Private.h"
 #import "FirebaseStorage/Sources/FIRStorageObservableTask_Private.h"
 #import "FirebaseStorage/Sources/FIRStorageTask_Private.h"
-#import "FirebaseStorage/Sources/FIRStorage_Private.h"
 
 @implementation FIRStorageDownloadTask
 
@@ -81,7 +80,7 @@
       }
     }];
 
-    fetcher.maxRetryInterval = strongSelf.reference.storage.maxDownloadRetryInterval;
+    fetcher.maxRetryInterval = strongSelf.reference.storage.maxDownloadRetryTime;
 
     if (strongSelf->_fileURL) {
       // Handle file downloads

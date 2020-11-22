@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "FirebaseStorage/Sources/Public/FirebaseStorage/FIRStorage.h"
-#import "FirebaseStorage/Sources/Public/FirebaseStorage/FIRStorageReference.h"
+#import <FirebaseStorage/FIRStorage.h>
+#import <FirebaseStorage/FIRStorageReference.h>
 
 #import "FirebaseStorage/Sources/FIRStorageComponent.h"
 #import "FirebaseStorage/Sources/FIRStorageConstants_Private.h"
@@ -23,15 +23,13 @@
 #import "FirebaseStorage/Sources/FIRStorageUtils.h"
 #import "FirebaseStorage/Sources/FIRStorage_Private.h"
 
-#import "FirebaseCore/Sources/Private/FirebaseCoreInternal.h"
-#import "Interop/Auth/Public/FIRAuthInterop.h"
+#import <FirebaseAuthInterop/FIRAuthInterop.h>
+#import <FirebaseCore/FIRAppInternal.h>
+#import <FirebaseCore/FIRComponentContainer.h>
+#import <FirebaseCore/FIROptions.h>
 
-#if SWIFT_PACKAGE
-@import GTMSessionFetcherCore;
-#else
 #import <GTMSessionFetcher/GTMSessionFetcher.h>
 #import <GTMSessionFetcher/GTMSessionFetcherLogging.h>
-#endif
 
 static NSMutableDictionary<
     NSString * /* app name */,
@@ -41,9 +39,6 @@ static GTMSessionFetcherRetryBlock _retryWhenOffline;
 @interface FIRStorage () {
   /// Stored Auth reference, if it exists. This needs to be stored for `copyWithZone:`.
   id<FIRAuthInterop> _Nullable _auth;
-  NSTimeInterval _maxUploadRetryTime;
-  NSTimeInterval _maxDownloadRetryTime;
-  NSTimeInterval _maxOperationRetryTime;
 }
 @end
 
@@ -157,14 +152,8 @@ static GTMSessionFetcherRetryBlock _retryWhenOffline;
     _dispatchQueue = dispatch_queue_create("com.google.firebase.storage", DISPATCH_QUEUE_SERIAL);
     _fetcherServiceForApp = [FIRStorage fetcherServiceForApp:_app bucket:bucket auth:auth];
     _maxDownloadRetryTime = 600.0;
-    _maxDownloadRetryInterval =
-        [FIRStorageUtils computeRetryIntervalFromRetryTime:_maxDownloadRetryTime];
     _maxOperationRetryTime = 120.0;
-    _maxOperationRetryInterval =
-        [FIRStorageUtils computeRetryIntervalFromRetryTime:_maxOperationRetryTime];
     _maxUploadRetryTime = 600.0;
-    _maxUploadRetryInterval =
-        [FIRStorageUtils computeRetryIntervalFromRetryTime:_maxUploadRetryTime];
   }
   return self;
 }
@@ -212,50 +201,6 @@ static GTMSessionFetcherRetryBlock _retryWhenOffline;
 
 - (NSString *)description {
   return [NSString stringWithFormat:@"%@ %p: %@", [self class], self, _app];
-}
-
-#pragma mark - Retry time intervals
-
-- (void)setMaxUploadRetryTime:(NSTimeInterval)maxUploadRetryTime {
-  @synchronized(self) {
-    _maxUploadRetryTime = maxUploadRetryTime;
-    _maxUploadRetryInterval =
-        [FIRStorageUtils computeRetryIntervalFromRetryTime:maxUploadRetryTime];
-  }
-}
-
-- (NSTimeInterval)maxDownloadRetryTime {
-  @synchronized(self) {
-    return _maxDownloadRetryTime;
-  }
-}
-
-- (void)setMaxDownloadRetryTime:(NSTimeInterval)maxDownloadRetryTime {
-  @synchronized(self) {
-    _maxDownloadRetryTime = maxDownloadRetryTime;
-    _maxDownloadRetryInterval =
-        [FIRStorageUtils computeRetryIntervalFromRetryTime:maxDownloadRetryTime];
-  }
-}
-
-- (NSTimeInterval)maxUploadRetryTime {
-  @synchronized(self) {
-    return _maxUploadRetryTime;
-  }
-}
-
-- (void)setMaxOperationRetryTime:(NSTimeInterval)maxOperationRetryTime {
-  @synchronized(self) {
-    _maxOperationRetryTime = maxOperationRetryTime;
-    _maxOperationRetryInterval =
-        [FIRStorageUtils computeRetryIntervalFromRetryTime:maxOperationRetryTime];
-  }
-}
-
-- (NSTimeInterval)maxOperationRetryTime {
-  @synchronized(self) {
-    return _maxOperationRetryTime;
-  }
 }
 
 #pragma mark - Public methods
@@ -314,5 +259,4 @@ static GTMSessionFetcherRetryBlock _retryWhenOffline;
   [NSException raise:NSGenericException format:@"getDownloadTasks not implemented"];
   return nil;
 }
-
 @end

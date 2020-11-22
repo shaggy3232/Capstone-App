@@ -14,19 +14,22 @@
  * limitations under the License.
  */
 
-#import "GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCOREvent.h"
+#import <GoogleDataTransport/GDTCOREvent.h>
 
-#import "GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCORClock.h"
+#import <GoogleDataTransport/GDTCORClock.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GDTCOREvent ()
 
-/** The unique ID of the event. This property is for testing only. */
-@property(nonatomic, readwrite) NSString *eventID;
-
-/** Generates a unique event ID. */
-+ (NSString *)nextEventID;
+/** Writes [dataObject transportBytes] to the given URL, populates fileURL with the filename, then
+ * nils the dataObject property. This method should not be called twice on the same event.
+ *
+ * @param fileURL The fileURL that dataObject will be written to.
+ * @param error If populated, the error encountered during writing to disk.
+ * @return YES if writing dataObject to disk was successful, NO otherwise.
+ */
+- (BOOL)writeToURL:(NSURL *)fileURL error:(NSError **)error;
 
 @end
 
