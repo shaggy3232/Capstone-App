@@ -15,12 +15,8 @@ struct HomeView: View {
         ZStack{
             VStack{
                 TabView{
-                    
                     NutrientBreakdownView().tag(0)
-                    
                     DailyLogView(meals: viewModel.Meal_data).tag(1)
-                    
-
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
          

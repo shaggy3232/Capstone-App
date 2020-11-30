@@ -13,7 +13,6 @@ import Foundation
     
     var id = UUID()
     var Name : String
-    var Time : String
     var Weight : String
 
 }

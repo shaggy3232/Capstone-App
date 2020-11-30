@@ -25,11 +25,10 @@ class MealViewModel: ObservableObject{
                
                 self.Meal_data = documents.map{queryDocumentSnapshot -> Meal in
                     let data = queryDocumentSnapshot.data()
-                    let name = data["name"] as? String ?? "No Name Found"
-                    let time = data["time"] as? String ?? "No Time Found"
-                    let weight = data["weight"] as? String ?? "No Weight Found"
+                    let name = data["Name"] as? String ?? "No Name Found"
+                    let weight = data["Weight"] as? String ?? "No Weight Found"
                     
-                    return Meal(Name: name, Time: time, Weight: weight)
+                    return Meal(Name: name, Weight: weight)
                 }
         }
     }

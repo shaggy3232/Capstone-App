@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var session: SessionStore
     @ObservedObject var viewmodel = MealViewModel()
+    @ObservedObject var nutrientAPI = NutrientAPIManager()
     
     func getUser() {
         session.listen()
@@ -30,6 +31,7 @@ struct ContentView: View {
           }
         }.onAppear(){
             viewmodel.getMeals()
+            self.nutrientAPI.getNutrientData()
         }
                 Button(action: session.signOut) {
                     Text ("Sign Out")
