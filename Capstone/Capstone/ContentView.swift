@@ -31,7 +31,7 @@ struct ContentView: View {
           }
         }.onAppear(){
             viewmodel.getMeals()
-            self.nutrientAPI.getNutrientData()
+            self.nutrientAPI.getNutrientData(meal: Meal(Name: "Apple", Weight: "120", Food_id: "9040"))
         }
                 Button(action: session.signOut) {
                     Text ("Sign Out")

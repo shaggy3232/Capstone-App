@@ -27,8 +27,9 @@ class MealViewModel: ObservableObject{
                     let data = queryDocumentSnapshot.data()
                     let name = data["Name"] as? String ?? "No Name Found"
                     let weight = data["Weight"] as? String ?? "No Weight Found"
+                    let foodID = data["FoodID"] as? String ?? "No ID Found"
                     
-                    return Meal(Name: name, Weight: weight)
+                    return Meal(Name: name, Weight: weight, Food_id: foodID)
                 }
         }
     }

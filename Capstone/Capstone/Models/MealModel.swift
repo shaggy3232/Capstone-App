@@ -14,6 +14,7 @@ import Foundation
     var id = UUID()
     var Name : String
     var Weight : String
+    var Food_id: String
 
 }
 
