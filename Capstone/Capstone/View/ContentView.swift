@@ -17,21 +17,35 @@ struct ContentView: View {
         session.listen()
     }
     
+    func getNutrientMealData(){
+        let mealList = self.viewmodel.Meal_data
+        for object in mealList{
+            self.nutrientAPI.getNutrientData(meal: object)
+        }
+    }
+    
     var body: some View {
         Group {
             if (session.session != nil) {
                 ZStack{
                     VStack{
                         TabView{
-                            NutrientBreakdownView().tag(0)
-                            DailyLogView(meals: viewmodel.Meal_data).tag(1)
+                            Welcome().tag(2)
+                            NutrientBreakdownView(meals: self.nutrientAPI.MealNutrientList, totalCalories: self.nutrientAPI.TotalCalories).tag(1)
+                            DailyLogView(meals: viewmodel.Meal_data).tag(0)
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                        Button("Get nutrients"){
+                            self.getNutrientMealData()
+                        }
+                        Button("Get total Calories"){
+                            self.nutrientAPI.getTotalCalories()
+                        }
                  
           }
         }.onAppear(){
             viewmodel.getMeals()
-            self.nutrientAPI.getNutrientData(meal: Meal(Name: "Apple", Weight: "120", Food_id: "9040"))
+
         }
                 Button(action: session.signOut) {
                     Text ("Sign Out")

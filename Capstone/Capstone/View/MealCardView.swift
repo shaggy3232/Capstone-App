@@ -25,7 +25,7 @@ struct MealCardView: View {
                     HStack{
                         VStack{
                         Spacer(minLength: 0)
-                        Text("Calories:\(meal.Weight)")
+                        Text("Weight:\(meal.Weight)")
                             .foregroundColor(.white)
                             
                         }

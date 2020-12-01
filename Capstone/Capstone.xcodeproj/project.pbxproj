@@ -17,6 +17,8 @@
 		E7232C0F2530E4D6003F3528 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7232C0E2530E4D6003F3528 /* GoogleService-Info.plist */; };
 		E72D2DAE2532948C00DA7090 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D2DAD2532948C00DA7090 /* AuthView.swift */; };
 		E72D2DBF25329AF200DA7090 /* Southampton.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E72D2DBE25329AF200DA7090 /* Southampton.ttf */; };
+		E76DE46A257615F800304DBE /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76DE469257615F800304DBE /* Welcome.swift */; };
+		E76DE46D25769B0A00304DBE /* Calorie tracker View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76DE46C25769B0A00304DBE /* Calorie tracker View.swift */; };
 		E78680A425309E1C004A8ABD /* DailyLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680A325309E1C004A8ABD /* DailyLogView.swift */; };
 		E78680A72530A9A8004A8ABD /* NutrientBreakdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680A62530A9A8004A8ABD /* NutrientBreakdownView.swift */; };
 		E78680AB2530B542004A8ABD /* MealCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78680AA2530B542004A8ABD /* MealCardView.swift */; };
@@ -24,7 +26,6 @@
 		E78BD7042572E350007347B9 /* NutrientAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78BD7032572E350007347B9 /* NutrientAPIManager.swift */; };
 		E78BD70925756CEB007347B9 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78BD70825756CEB007347B9 /* Food.swift */; };
 		E7AD96A02530E7070060CA75 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AD969F2530E7070060CA75 /* SessionStore.swift */; };
-		E7BFB3922560A7B9001CB6D7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BFB3912560A7B9001CB6D7 /* HomeView.swift */; };
 		E7BFB3952560A7FB001CB6D7 /* MealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BFB3942560A7FB001CB6D7 /* MealModel.swift */; };
 		E7BFB3982560A800001CB6D7 /* DummyMealData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BFB3972560A800001CB6D7 /* DummyMealData.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,8 @@
 		E7232C0E2530E4D6003F3528 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E72D2DAD2532948C00DA7090 /* AuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		E72D2DBE25329AF200DA7090 /* Southampton.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Southampton.ttf; sourceTree = "<group>"; };
+		E76DE469257615F800304DBE /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
+		E76DE46C25769B0A00304DBE /* Calorie tracker View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calorie tracker View.swift"; sourceTree = "<group>"; };
 		E78680A325309E1C004A8ABD /* DailyLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLogView.swift; sourceTree = "<group>"; };
 		E78680A62530A9A8004A8ABD /* NutrientBreakdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientBreakdownView.swift; sourceTree = "<group>"; };
 		E78680AA2530B542004A8ABD /* MealCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCardView.swift; sourceTree = "<group>"; };
@@ -51,7 +54,6 @@
 		E78BD7032572E350007347B9 /* NutrientAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientAPIManager.swift; sourceTree = "<group>"; };
 		E78BD70825756CEB007347B9 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		E7AD969F2530E7070060CA75 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
-		E7BFB3912560A7B9001CB6D7 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E7BFB3942560A7FB001CB6D7 /* MealModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealModel.swift; sourceTree = "<group>"; };
 		E7BFB3972560A800001CB6D7 /* DummyMealData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyMealData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,18 +108,12 @@
 		E7170DCD251B826900B385A9 /* Capstone */ = {
 			isa = PBXGroup;
 			children = (
+				E76DE4632575F2D000304DBE /* ObservableObjects */,
+				E76DE4622575F27C00304DBE /* View */,
 				E78BD70725756724007347B9 /* Models */,
 				E7170DCE251B826900B385A9 /* AppDelegate.swift */,
 				E7170DD0251B826900B385A9 /* SceneDelegate.swift */,
-				E7170DD2251B826900B385A9 /* ContentView.swift */,
-				E72D2DAD2532948C00DA7090 /* AuthView.swift */,
 				E7AD969F2530E7070060CA75 /* SessionStore.swift */,
-				E78680A325309E1C004A8ABD /* DailyLogView.swift */,
-				E7BFB3912560A7B9001CB6D7 /* HomeView.swift */,
-				E7BFB3972560A800001CB6D7 /* DummyMealData.swift */,
-				E78680AA2530B542004A8ABD /* MealCardView.swift */,
-				E78BD7032572E350007347B9 /* NutrientAPIManager.swift */,
-				E78680A62530A9A8004A8ABD /* NutrientBreakdownView.swift */,
 				E7170DD9251B827100B385A9 /* LaunchScreen.storyboard */,
 				E7170DDC251B827100B385A9 /* Info.plist */,
 				E7232C0E2530E4D6003F3528 /* GoogleService-Info.plist */,
@@ -142,6 +138,29 @@
 				E72D2DBE25329AF200DA7090 /* Southampton.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E76DE4622575F27C00304DBE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E7170DD2251B826900B385A9 /* ContentView.swift */,
+				E78680A325309E1C004A8ABD /* DailyLogView.swift */,
+				E78680A62530A9A8004A8ABD /* NutrientBreakdownView.swift */,
+				E78680AA2530B542004A8ABD /* MealCardView.swift */,
+				E72D2DAD2532948C00DA7090 /* AuthView.swift */,
+				E76DE469257615F800304DBE /* Welcome.swift */,
+				E76DE46C25769B0A00304DBE /* Calorie tracker View.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E76DE4632575F2D000304DBE /* ObservableObjects */ = {
+			isa = PBXGroup;
+			children = (
+				E7BFB3972560A800001CB6D7 /* DummyMealData.swift */,
+				E78BD7032572E350007347B9 /* NutrientAPIManager.swift */,
+			);
+			path = ObservableObjects;
 			sourceTree = "<group>";
 		};
 		E78BD70725756724007347B9 /* Models */ = {
@@ -272,18 +291,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7BFB3952560A7FB001CB6D7 /* MealModel.swift in Sources */,
-				E7BFB3922560A7B9001CB6D7 /* HomeView.swift in Sources */,
 				E78680A72530A9A8004A8ABD /* NutrientBreakdownView.swift in Sources */,
 				E78BD7012572CFEE007347B9 /* MealNutrientBreakdown.swift in Sources */,
 				E78680AB2530B542004A8ABD /* MealCardView.swift in Sources */,
 				E7170DCF251B826900B385A9 /* AppDelegate.swift in Sources */,
 				E78680A425309E1C004A8ABD /* DailyLogView.swift in Sources */,
+				E76DE46A257615F800304DBE /* Welcome.swift in Sources */,
 				E78BD70925756CEB007347B9 /* Food.swift in Sources */,
 				E7170DD1251B826900B385A9 /* SceneDelegate.swift in Sources */,
 				E7AD96A02530E7070060CA75 /* SessionStore.swift in Sources */,
 				E72D2DAE2532948C00DA7090 /* AuthView.swift in Sources */,
 				E7BFB3982560A800001CB6D7 /* DummyMealData.swift in Sources */,
 				E7170DD3251B826900B385A9 /* ContentView.swift in Sources */,
+				E76DE46D25769B0A00304DBE /* Calorie tracker View.swift in Sources */,
 				E78BD7042572E350007347B9 /* NutrientAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

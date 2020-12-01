@@ -11,11 +11,18 @@ import Foundation
 
 class NutrientAPIManager : ObservableObject{
     @Published var MealNutrientList = [MealNutrientBreakdown]()
-    
+    @Published var TotalCalories = Float()
    
     init(){
         
     }
+    func getTotalCalories(){
+        for object in self.MealNutrientList{
+            self.TotalCalories += object.Calories
+        }
+        print(self.TotalCalories)
+    }
+
     func getNutrientData(meal : Meal){
         let foodid = meal.Food_id
         let weight = meal.Weight
@@ -32,16 +39,17 @@ class NutrientAPIManager : ObservableObject{
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
         
-        
-        
         let session = URLSession.shared
         let _: Void = session.dataTask(with: request, completionHandler: { data, response, error in
                 if let data = data{
                     let Mealdata = JSONDecoder()
                     do {
                         let decodedData = try Mealdata.decode(Food.self, from: data)
-                        self.MealNutrientList.append(MealNutrientBreakdown(Name: decodedData.originalName, Calories: decodedData.nutrition.nutrients[0].amount))
-                        print(self.MealNutrientList)
+                        DispatchQueue.main.async {
+                            self.MealNutrientList.append(MealNutrientBreakdown(Name: decodedData.originalName, Calories: decodedData.nutrition.nutrients[0].amount))
+                        }
+                        
+                        
                         
                     } catch let error{
                         print(error)
