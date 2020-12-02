@@ -11,6 +11,7 @@ import SwiftUI
 struct NutrientBreakdownView: View {
     @State var meals : [MealNutrientBreakdown]
     @State var totalCalories : Float
+    @State var totalCarbs : Float
     var columns = Array(repeating: GridItem(.flexible(),spacing: 20), count: 2)
     
     var body: some View {
@@ -18,7 +19,13 @@ struct NutrientBreakdownView: View {
             VStack{
                 Text("Nutrient breakdown")
                 Text(String(format: "%.2f", self.totalCalories))
-                Calorie_tracker_View(nutrient: "Calories", amount: totalCalories)
+                Nutrient_tracker_View(nutrient: "Calories", amount: totalCalories)
+                Text(String(format: "%.2f", self.totalCarbs))
+                HStack{
+                smallCircleTracker(nutrient: "Carbohydrates", amount: totalCarbs)
+                smallCircleTracker(nutrient: "Carbohydrates", amount: totalCarbs)
+                smallCircleTracker(nutrient: "Carbohydrates", amount: totalCarbs)
+                }
             }
         }
     }

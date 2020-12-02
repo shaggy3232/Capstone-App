@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Calorie_tracker_View: View {
+struct Nutrient_tracker_View: View {
     @State var nutrient : String
     @State var amount : Float
     var colors : [Color] = [.green,.blue,.white,.green]

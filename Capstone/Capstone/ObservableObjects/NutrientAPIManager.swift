@@ -12,6 +12,7 @@ import Foundation
 class NutrientAPIManager : ObservableObject{
     @Published var MealNutrientList = [MealNutrientBreakdown]()
     @Published var TotalCalories = Float()
+    @Published var TotalCarbs = Float()
    
     init(){
         
@@ -19,6 +20,7 @@ class NutrientAPIManager : ObservableObject{
     func getTotalCalories(){
         for object in self.MealNutrientList{
             self.TotalCalories += object.Calories
+            self.TotalCarbs += object.Carbohydrates
         }
         print(self.TotalCalories)
     }
@@ -46,7 +48,7 @@ class NutrientAPIManager : ObservableObject{
                     do {
                         let decodedData = try Mealdata.decode(Food.self, from: data)
                         DispatchQueue.main.async {
-                            self.MealNutrientList.append(MealNutrientBreakdown(Name: decodedData.originalName, Calories: decodedData.nutrition.nutrients[0].amount))
+                            self.MealNutrientList.append(MealNutrientBreakdown(Name: decodedData.originalName, Calories: decodedData.nutrition.nutrients[0].amount, Carbohydrates: decodedData.nutrition.nutrients[3].amount))
                         }
                         
                         
