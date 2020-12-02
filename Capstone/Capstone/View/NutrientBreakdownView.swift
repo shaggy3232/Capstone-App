@@ -12,6 +12,9 @@ struct NutrientBreakdownView: View {
     @State var meals : [MealNutrientBreakdown]
     @State var totalCalories : Float
     @State var totalCarbs : Float
+    @State var totalFats : Float
+    @State var totalprotien : Float
+
     var columns = Array(repeating: GridItem(.flexible(),spacing: 20), count: 2)
     
     var body: some View {
@@ -20,11 +23,10 @@ struct NutrientBreakdownView: View {
                 Text("Nutrient breakdown")
                 Text(String(format: "%.2f", self.totalCalories))
                 Nutrient_tracker_View(nutrient: "Calories", amount: totalCalories)
-                Text(String(format: "%.2f", self.totalCarbs))
                 HStack{
                 smallCircleTracker(nutrient: "Carbohydrates", amount: totalCarbs)
-                smallCircleTracker(nutrient: "Carbohydrates", amount: totalCarbs)
-                smallCircleTracker(nutrient: "Carbohydrates", amount: totalCarbs)
+                smallCircleTracker(nutrient: "Protien", amount: totalprotien)
+                smallCircleTracker(nutrient: "Fats", amount: totalFats)
                 }
             }
         }

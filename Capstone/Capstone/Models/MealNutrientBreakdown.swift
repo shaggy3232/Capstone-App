@@ -14,5 +14,6 @@ struct MealNutrientBreakdown : Identifiable {
     var Name : String
     var Calories: Float
     var Carbohydrates: Float
-
+    var Protien : Float
+    var Fat : Float
 }

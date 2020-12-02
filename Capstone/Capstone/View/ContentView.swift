@@ -31,7 +31,7 @@ struct ContentView: View {
                     VStack{
                         TabView{
                             Welcome().tag(2)
-                            NutrientBreakdownView(meals: self.nutrientAPI.MealNutrientList, totalCalories: self.nutrientAPI.TotalCalories, totalCarbs: self.nutrientAPI.TotalCarbs).tag(1)
+                            NutrientBreakdownView(meals: self.nutrientAPI.MealNutrientList, totalCalories: self.nutrientAPI.TotalCalories, totalCarbs: self.nutrientAPI.TotalCarbs, totalFats: self.nutrientAPI.TotalFats, totalprotien: self.nutrientAPI.TotalProtiens).tag(1)
                             DailyLogView(meals: viewmodel.Meal_data).tag(0)
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
