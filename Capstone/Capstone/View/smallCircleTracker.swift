@@ -16,6 +16,7 @@ struct smallCircleTracker: View {
         var body: some View {
             VStack{
                 Text(nutrient)
+                Text(String(format: "%.2f", amount))
                 ZStack{
                     
                     Circle()

@@ -9,7 +9,6 @@
 import Foundation
 
 struct MealNutrientBreakdown : Identifiable {
-   
     var id = UUID()
     var Name : String
     var Calories: Float

@@ -25,7 +25,7 @@ struct NutrientBreakdownView: View {
                 Nutrient_tracker_View(nutrient: "Calories", amount: totalCalories)
                 HStack{
                 smallCircleTracker(nutrient: "Carbohydrates", amount: totalCarbs)
-                smallCircleTracker(nutrient: "Protien", amount: totalprotien)
+                smallCircleTracker(nutrient: "Protein", amount: totalprotien)
                 smallCircleTracker(nutrient: "Fats", amount: totalFats)
                 }
             }
